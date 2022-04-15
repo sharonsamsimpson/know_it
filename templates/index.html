@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">     
+    <title>Prediction</title>  
+</head>
+    
+<body>    
+    <br>
+    <h1> <b>KNOW IT !!!</b> </h1>    
+    <h2> <b>Select the desired content for prediction to continue...</b> </h2>
+    <br>
+    
+    <div class="dropdown btn-block">    
+        
+        <button class="dropbtn">Datasets for prediction</button>  
+        
+        <div class="dropdown-content" style="left:0;">
+            
+            <a href="{{ url_for('rpizza')}}">Pizza liking prediction</a>
+            <a href="{{ url_for('rfuel')}}">Fuel price prediction</a>          
+            <a href="{{ url_for('rdiabetes')}}">Diabetes presence prediction</a>
+
+        </div>        
+    </div>    
+</body>
+</html>

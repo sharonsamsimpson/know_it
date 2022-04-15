@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fuel.css') }}">  
+    <title>Prediction</title>
+</head>
+
+<body>
+    <h1><b>Happy Journey !!!</b></h1>
+    
+    <div class="login">
+        
+        <h2><b>Fuel Price Prediction</b></h2>
+        <br> 
+        
+        <form action="{{ url_for('fuel')}}" method="POST">
+            
+            <h4><b>Enter the distance</b></h4>
+            <input type="text" name="distance" placeholder="distance in km" required="required"/>
+            <br>
+            
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        </form>
+        <br>
+        
+        {{ prediction_text }}
+        <br><br>
+        
+        <form action="{{ url_for('back')}}" method="POST">
+            <button  type="submit" class="btn btn-primary">Back</button>
+        </form>
+        <br>
+    </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/diabetes.css') }}">  
+    <title>Prediction</title>  
+</head>
+
+<body>
+    <h1><b>Safe & Healthy Life !!!</b></h1>
+    
+    <div class="login">
+        
+        <h5><b>Diabetes presence prediction</b></h5>
+        
+        <form action="{{ url_for('diabetes')}}" method="POST" class="scroll">
+            
+            <h6>Enter your pregnancies</h6>
+            <input type="float" name="pregnancies" placeholder="pregnancies" required="required"/>
+       
+            <h6>Enter your glucose</h6>
+            <input type="float" name="glucose" placeholder="glucose" required="required"/>
+        
+            <h6>Enter your bloodpressure</h6>
+            <input type="float" name="bloodpressure" placeholder="bloodpressure" required="required"/>
+
+            <h6>Enter your skinthickness</h6>
+            <input type="float" name="skinthickness" placeholder="skinthickness" required="required"/>
+        
+            <h6>Enter your insulin</h6>
+            <input type="float" name="insulin" placeholder="insulin" required="required"/>
+           
+            <h6>Enter your bmi</h6>
+            <input type="float" name="bmi" placeholder="bmi" required="required"/>
+      
+            <h6>Enter your diabetespedigreefunction</h6>
+            <input type="float" name="diabetespedigreefunction" placeholder="diabetespedigreefunction" required="required"/>
+  
+            <h6>Enter your age</h6>
+            <input type="float" name="age" placeholder="age" required="required"/>
+            <br>
+            
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        </form>
+        <br>
+        
+        {{ prediction_text }}
+        <br>
+        
+        <form action="{{ url_for('back')}}" method="POST">
+            <button  type="submit" class="btn btn-primary">Back</button>
+        </form>
+        <br>
+        
+    </div>
+</body>
+</html>
